@@ -28,15 +28,11 @@ const workoutSchema = new Schema({
   duration: {
     type: Number,
     required: "How long was your workout?"
+  },
+    date: {
+    type: Date,
+    default: Date.now
   }
-//   value: {
-//     type: Number,
-//     required: "Enter an amount"
-//   },
-//   date: {
-//     type: Date,
-//     default: Date.now
-//   }
 });
 
 const Transaction = mongoose.model("Workout", workoutSchema);
