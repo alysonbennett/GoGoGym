@@ -1,52 +1,52 @@
 const router = require("express").Router();
-const Workout = require("../models/workout.js")
+const db = require("../models")
 
 // module.exports = function(app){ 
-    router.get("/api/workout",function(req,res){  
-        Workout.find()
-        .then(data =>{  
-            res.json(data)
+    router.get("/api/workouts", function(req,res){  
+        db.Workout.find({})
+        .then(dbWorkout =>{  
+            res.json(dbWorkout)
         })
         .catch(err => { 
-            res.json(err)
+            res.status(400).json(err);
         })
     });
 
-    router.post("/api/workout",function (req,res){    
-        Workout.create({})
-        .then(data => res.json(data))
+    router.post("/api/workouts", function (req,res){    
+        db.Workout.create({})
+        .then(dbWorkout => res.json(dbWorkout))
         .catch(err => { 
-            res.json(err)
+            res.status(400).json(err);
         })
     });
 
-    router.get("/api/workout/range",function(req,res){  
-        Workout.find()
-        .then(data =>{  
-            res.json(data)
+    router.get("/api/workouts/range", function (req,res){  
+        db.Workout.find()
+        .then(dbWorkout =>{  
+            res.json(dbWorkout)
         })
         .catch(err => { 
-            res.json(err)
+            res.status(400).json(err);
         })
     });
 
-    router.post("/api/workout/range",function (req,res){    
-        Workout.create({})
-        .then(data => res.json(data))
+    router.post("/api/workouts/range", function (req,res){    
+        db.Workout.create({})
+        .then(dbWorkout => res.json(dbWorkout))
         .catch(err => { 
-            res.json(err)
+            res.status(400).json(err);
         })
     });
 
-    router.put("/api/workout/:id",({body,params},res)=>{   
-        Workout.findByIdAndUpdate(  
+    router.put("/api/workouts/:id", ({body,params},res) => {   
+        db.Workout.findByIdAndUpdate(  
          params.id,
          {$push:{exercises:body} },
          {new: true,runValidators:true }
         )
         .then(data => res.json(data))
         .catch(err => { 
-            res.json(err)
+            res.status(400).json(err);
         })
     });
 // }
