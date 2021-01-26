@@ -23,7 +23,7 @@ npm install
 
 ## Usage
 
-If accessing this app from the Heroku link, you do not need to install anything to get started! 
+If accessing this app from the Heroku link, you do not need to install anything to get started! Locate the Heroku app here: https://hidden-inlet-16797.herokuapp.com/.
 
 To use this application from GitHub, first fork and open the repo onto your local machine. Before attempting to use the app, open your terminal and perform a ```npm install``` to get the necessary packages.
 
