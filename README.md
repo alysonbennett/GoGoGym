@@ -27,7 +27,13 @@ If accessing this app from the Heroku link, you do not need to install anything 
 
 To use this application from GitHub, first fork and open the repo onto your local machine. Before attempting to use the app, open your terminal and perform a ```npm install``` to get the necessary packages.
 
+When first opening the app, the user will be prompted to start a new workout.
 
+![index](public/assets/index.png)
+
+From here, the user can add an exercise to the fitness tracker
+
+![Adding an Exercise](public/assets/add.png)
 
 ## Credits
 
